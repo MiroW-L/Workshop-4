@@ -1,3 +1,10 @@
 # Workshop-4
 
-a
+
+
+## Starting off (25/1/25)
+- Started by coding an adjusting canvas as Leo showed us in the workshop video.
+- Next I made a text import before thinking about what my page would be about. I thought about making a Bob Dylan page which would be funny but I am worried about the copyright laws of that so I will just use my own images.
+- I tried to add a slider next however it didn't work with my adjustable backgroud which was frustrating. I"ll add buttons and boxes you can tick instead.
+- Okay I have dedicated to use a button, some checkboxes, and a text input bar on my page now I'm workign on making the checkboxes change the colour, the button adding a random image to the page, and the text imput putting whatever is typed onto the background. I've been using the help of my friend Ghen again, asking him questions about how I would add/change some of my code. Here is some of his advice:
+<img width="767" alt="Screenshot 2025-01-26 at 11 00 15 PM" src="https://github.com/user-attachments/assets/709ec7be-4146-4384-b3ec-d51d6b662f14" />
