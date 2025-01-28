@@ -1,90 +1,69 @@
 let theInput;
-let img;
-let photos = [];
-let p1, p2, p3;
+let font1;
 let checkbox;
-// let slider;
 let x = 0;
 let y = 0;
+let userLine;
+
+let writing = [];
+
+let backgroundR = 220;
+let backgroundG = 220;
+let backgroundB = 220;
 
 function preload(){
-  img = loadImage("images/Minutemen.png");
-// p1 = loadImage('');
-// p2 = loadImage('');
-// p3 = loadImage('');
+font1 = loadFont('ledlight/LEDLIGHT.otf')
 }
 
 function setup () {
-// photos.push(p1);
-// photos.push(p2);
-// photos.push(p3);
 createCanvas (windowWidth, windowHeight);  
+textFont(font1);
+textSize(54);
 theInput = createInput();
 theInput.position(x+200,y+200)
-// let button = createButton('hi');
-// button.position(width/2,height/2);
-// button.mousePressed(()=> {
-//   let r = random(img);
-//   image(img,10,10)
-// });
+button = createButton('enter');
+button.position(x + 348,y + 200);
+button.mousePressed(newLine);
 
-// checkbox1 = createCheckbox();
-// checkbox1.position(x+400,y+400)
-// let span = createSpan('evil');
-// span.position(377,400);
-// checkbox1.mouseClicked(()=> {
-//  if(checkbox1.checked())
-//    background(125,0,70);
-//  else
-//      background(255); })
-// // background (125,0,70);
-
-// checkbox2 = createCheckbox();
-// checkbox2.position(x+400,y+420)
-// let pan = createSpan('good');
-// pan.position(370,420);
-// checkbox2.mouseClicked(()=>{
-  
-//   if(checkbox2.checked())
-//     background(70,0,125);
-// else
-//     background(255);
-// })
-// // background (70,0,125);
 
 let checkbox1 = createCheckbox();
   checkbox1.position(x+400, y+400);
-  let span = createSpan('evil');
- span.position(377,400);
+  let span = createSpan('doom');
+ span.position(366,400);
   checkbox1.mouseClicked(() => {
     if(checkbox1.checked()) {
-      background(125,0,70);
+      backgroundR=0;
     } else {
       background(220);
     }
   });
   
-  let checkbox2 = createCheckbox();
+let checkbox2 = createCheckbox();
   checkbox2.position(x+400, y+420);
-  let pan = createSpan('good');
-   pan.position(370,420);
+  let pan = createSpan('gloom');
+   pan.position(361,420);
   checkbox2.mouseClicked(() => {
     if(checkbox2.checked()) {
-      background(70,0,125);
+      backgroundG=125;
     } else {
       background(220);
     }
   });
 
-// let checkboxPos = checkbox.position();
-// let spanSize = span.size();
-
-// checkbox.mouseReleased
-// span.position(checkboxPos.x - spanSize.width, checkboxPos.y).
-
-// slider = createSlider(500,200);
-// slider.size(200);
-
+let checkbox3 = createCheckbox();
+  checkbox3.position(x+400, y+440);
+  let lpan = createSpan('crab rangoon');
+   lpan.position(319,440);
+  checkbox3.mousePressed(() => {
+    if(checkbox3.checked()) {
+      backgroundB=70;
+    } else {
+      background(220);
+    }
+    if(checkbox3.unchecked()){
+      backgroundB=220;
+    }
+  });
 }
 
 function windowResized(){
@@ -92,8 +71,21 @@ function windowResized(){
 }
 
  function draw(){
-background (212);
+background(backgroundR, backgroundG, backgroundB);
 let words = theInput.value();
-text(words, 20, 50);
+text(words, 50, 100);
+writeThings();
 
+ }
+
+ function newLine(){
+userLine = theInput.value();
+theInput.value('');
+writing.push(userLine);
+ }
+
+ function writeThings(){
+  for(x = 0; x < writing.length; x++){
+    text(writing[x], 40, 180 + x * 40);
+  }
  }
